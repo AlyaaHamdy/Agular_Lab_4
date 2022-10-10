@@ -1,0 +1,27 @@
+<div class="container">
+  <div *ngIf="isloading" class="spinner-grow " style="font-size: 5rem;"  role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <table *ngIf="!isloading"  class="table">
+    <thead class="bg-dark text-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">IsDone</th>
+        <th scope="col">CreatedDate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of list">
+        <th scope="row">{{task.ID}}</th>
+        <th scope="row">{{task.Title}}</th>
+        <th scope="row">{{task.IsDone}}</th>
+        <th scope="row">{{task.CreatedDate}}</th>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/TaskDetails',task.ID]">Details</button>
+          <button class="btn btn-danger" (click)="Delete(task.ID)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

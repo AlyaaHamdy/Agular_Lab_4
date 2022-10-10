@@ -21,6 +21,9 @@ import { ProductDetailsComponent } from './component/product-details/product-det
 import { CreateStudentComponent } from './component/create-student/create-student.component';
 import { StudentListComponent } from './component/student-list/student-list.component';
 import { StudentComponent } from './component/Student/Student.component';
+import { TodoListComponent } from './component/todo-list/todo-list.component';
+import { CreateTaskComponent } from './component/create-task/create-task.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,14 +45,17 @@ import { StudentComponent } from './component/Student/Student.component';
     ProductDetailsComponent,
     CreateStudentComponent,
     StudentListComponent,
-    StudentComponent
+    StudentComponent,
+    TodoListComponent,
+    CreateTaskComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
   AppRoutingModule,
-  HttpClientModule
+  HttpClientModule,
+  CommonModule
   ],
   providers: [
     // ProductService

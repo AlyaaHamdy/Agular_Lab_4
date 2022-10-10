@@ -1,0 +1,34 @@
+<div class="container">
+    <form class="row g-3" [formGroup]="addTaskForm" (ngSubmit)="add()" >
+      <div class="col-md-6">
+        <label for="validationCustom01" class="form-label">ID</label>
+        <input type="text" class="form-control" formControlName="ID">
+          <div  *ngIf="addTaskForm.get('ID')?.touched && addTaskForm.get('ID')?.invalid">
+            <span class="text-danger" *ngIf="addTaskForm.get('ID')?.errors?.['required']">must enter a ID</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom01" class="form-label">Title</label>
+          <input type="text" class="form-control" formControlName="Title">
+            <div  *ngIf="addTaskForm.get('Title')?.touched && addTaskForm.get('Title')?.invalid">
+              <span class="text-danger" *ngIf="addTaskForm.get('Title')?.errors?.['required']">must enter a Title</span>
+            </div>
+          </div>
+      <div class="col-md-6">
+        <label for="validationCustom02" class="form-label">IsDone</label>
+        <input type="number" class="form-control"  formControlName="IsDone">
+        <div  *ngIf="addTaskForm.get('IsDone')?.touched && addTaskForm.get('IsDone')?.invalid">
+          <span class="text-danger" *ngIf="addTaskForm.get('IsDone')?.errors?.['required']">must enter an IsDone</span>
+        </div>
+      </div>
+     
+      <div class="col-md-4">
+        <label for="validationCustom04" class="form-label" >CreatedDate</label>
+        <input type="text" class="form-control" formControlName="CreatedDate">
+        <div  *ngIf="addTaskForm.get('CreatedDate')?.touched && addTaskForm.get('CreatedDate')?.invalid">
+          <span class="text-danger" *ngIf="addTaskForm.get('CreatedDate')?.errors?.['required']">must enter a CreatedDate</span>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="addTaskForm.invalid">Submit form</button>
+    </form>
+  </div>
